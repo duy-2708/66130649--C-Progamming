@@ -133,6 +133,7 @@ namespace On_Tap_2
         {
             dsnv.RemoveAll(x => x.MaNV == xoa);
         }
+
         static void Main(string[] args)
         { List<NhanVien> dsnv = new List<NhanVien>();
             Console.WriteLine("Nhap so luong  nhan vien ");
