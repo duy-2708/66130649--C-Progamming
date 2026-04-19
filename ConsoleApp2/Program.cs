@@ -128,6 +128,19 @@ namespace ConsoleApp2
             return  dsve.OrderByDescending(x => x.tinhGiaTien()).ToList();
          
         }
+        public static void Xoa(List<Ve>dsve,string ten)
+        {
+            Ve v = dsve.Find(x => x.MaVe == ten);
+            if(v != null)
+            {
+                dsve.Remove(v);
+
+            }
+            else
+            {
+                Console.WriteLine("Khong tim thay ten de xoa ");
+            }
+        }
         static void Main(string[] args)
         { List<Ve> dsve = new List<Ve>();
             Console.WriteLine("Nhap so luong ve muon mua ");
@@ -136,9 +149,14 @@ namespace ConsoleApp2
             Xuatds(dsve);
             //Console.WriteLine("DS Ve Vip > 100.000 ");
             //DSVV(dsve);
-            GiamDan(dsve);
-            Console.WriteLine("Danh sach ve giam dan");
+            //GiamDan(dsve);
+            //Console.WriteLine("Danh sach ve giam dan");
+            //Xuatds(dsve);
+            Console.WriteLine("Nhap ma ve muon xoa");
+            string ten = Console.ReadLine();
+            Xoa(dsve, ten);
             Xuatds(dsve);
+            
         }
     }
 }
